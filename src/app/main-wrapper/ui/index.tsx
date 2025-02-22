@@ -1,10 +1,10 @@
 import { PropsWithChildren } from 'react'
-import { Header } from './header/Header'
+import { UiHeader } from '@/shared/ui'
 
 export const MainWrapper = ({ children }: PropsWithChildren<unknown>) => {
 	return (
-		<div>
-			<Header />
+		<div className='px-6'>
+			<UiHeader />
 			{children}
 		</div>
 	)

@@ -1,4 +1,4 @@
-import { Filters } from './filters/Filters'
+import { Filters } from '@/features/filters'
 
 const Home = () => {
 	return (

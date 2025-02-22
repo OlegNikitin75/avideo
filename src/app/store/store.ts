@@ -7,6 +7,6 @@ export interface IStore {
 }
 
 export const useFilterStore = create<IStore>(set => ({
-	currentFilter: 'Популярные',
+	currentFilter: 'Жанры',
 	setCurrentFilter: filter => set({ currentFilter: filter })
 }))
