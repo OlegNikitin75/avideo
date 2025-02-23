@@ -34,7 +34,7 @@ export const UiHeader = () => {
 					</UiButton>
 					<UiButton variant='icon'>
 						<Image
-							className='border-foreground hover:border-primary rounded-full border-[1px] p-1 transition-colors'
+							className='border-foreground hover:border-primary rounded-full border-2 p-1 transition-colors'
 							src='/man.png'
 							height={40}
 							width={40}
