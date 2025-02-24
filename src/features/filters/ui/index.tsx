@@ -6,17 +6,17 @@ import { UiButton } from '@/shared/ui'
 export const Filters = () => {
 	const { currentFilter, setCurrentFilter } = useFilterStore()
 	return (
-		<div className='border-foreground/10 mt-12 space-x-3 border-[1px] p-2'>
+		<span className='border-foreground/10 mx-auto mt-12 inline-block space-x-3 border-[1px] p-2'>
 			{filtersData.map(filter => (
 				<UiButton
 					onClick={() => setCurrentFilter(filter)}
 					variant='secondary'
-					className={`hover:text-foreground/100 ${filter === currentFilter ? 'bg-primary pointer-events-none text-foreground/100' : 'bg-transparent text-foreground/60'}`}
+					className={`hover:text-foreground/100 ${filter === currentFilter ? 'bg-primary text-foreground/100 pointer-events-none' : 'text-foreground/60 bg-transparent'}`}
 					key={filter}
 				>
 					{filter}
 				</UiButton>
 			))}
-		</div>
+		</span>
 	)
 }
