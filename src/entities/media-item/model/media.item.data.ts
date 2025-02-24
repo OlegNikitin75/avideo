@@ -1,13 +1,11 @@
-import { TFilter } from '@/features/filters/model/filters.data'
-
 export interface IMediaItem {
 	id: number
 	title: string
 	slug:string
+	year:string
 	poster: string
-	backdrop:string
+	backdrop?:string
 	rating: number
-	type: TFilter
 	genres: string[]
 	seasons?: ISeasons[]
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from 'react'
 import Image from 'next/image'
 import { IMediaItem } from '../model/media.item.data'
@@ -21,14 +23,14 @@ export const MediaItem: FC<IMediaItemProps> = ({ item, index, arrayLength }) => 
 	}
 	return (
 		<m.button
-			className='relative -ml-7 inline-block h-[8.5rem] w-24 rounded-lg border-2 border-transparent transition-colors will-change-transform'
-			animate={initialAnimation}
+			className='relative -ml-7 inline-block  rounded-xl border-2 border-transparent transition-colors will-change-transform overflow-hidden h-[470px] w-80'
+			//animate={initialAnimation}
 			initial={{ scale: 1, zIndex: 0, y: 0 }}
+			transition={{ type: 'keyframes', stiffness: 230, damping: 32 }}
 		>
 			<Image
 				src={item.poster}
-				width={315}
-				height={472}
+				fill={true}
 				className='will-change-transform'
 				alt={item.title}
 				draggable='false'

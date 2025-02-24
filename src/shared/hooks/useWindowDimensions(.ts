@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+'use client'
+import { useState, useEffect } from 'react'
 
 interface WindowDimensions {
 	width: number | undefined
