@@ -1,4 +1,4 @@
-import { TFilter } from '@/app/filters/model/filters.data'
+import { TFilter } from '@/features/filters/model/filters.data'
 import { create } from 'zustand'
 
 export interface IStore {
