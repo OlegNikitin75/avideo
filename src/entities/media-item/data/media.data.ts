@@ -73,17 +73,9 @@ export const mediaData: IMediaItem[] = [
 		rating: 8.3,
 		genres: ['Триллер', 'Криминал']
 	},
+
 	{
 		id: 9,
-		title: 'Обратная сторона луны',
-		slug: 'obratnaya-storona-luny',
-		year: '2012-2016',
-		poster: '/images/posters/obratnaya-storona-luny.jpg',
-		rating: 8.3,
-		genres: ['Триллер', 'Фантастика']
-	},
-	{
-		id: 10,
 		title: 'Первый отдел',
 		slug: 'perviy-otdel',
 		year: 'с 2020',
@@ -92,32 +84,31 @@ export const mediaData: IMediaItem[] = [
 		genres: ['Детектив']
 	},
 	{
-		id: 11,
+		id: 10,
 		title: 'Прометей',
 		slug: 'prometey',
 		year: '2024',
 		poster: '/images/posters/prometey.jpg',
 		rating: 7.1,
 		genres: ['Детектив', 'Триллер']
-	}
-	,
+	},
+
 	{
-		id: 12,
-		title: 'Новичок',
-		slug: 'rookie',
-		year: 'с 2018',
-		poster: '/images/posters/rookie.jpg',
-		rating: 8.4,
-		genres: ['Боевик', 'Драма']
-	}
-	,
-	{
-		id: 13,
+		id: 11,
 		title: 'Триггер',
 		slug: 'trigger',
 		year: 'с 2018',
 		poster: '/images/posters/trigger.jpg',
 		rating: 8.5,
-		genres: [ 'Драма']
+		genres: ['Драма']
+	},
+	{
+		id: 12,
+		title: 'Чернобыль',
+		slug: 'chernobyl',
+		year: '2019',
+		poster: '/images/posters/chernobyl.jpg',
+		rating: 8.8,
+		genres: ['Драма']
 	}
 ]

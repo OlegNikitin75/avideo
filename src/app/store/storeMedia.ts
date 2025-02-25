@@ -6,6 +6,6 @@ export interface IStoreMedia {
 }
 
 export const useMediaStore = create<IStoreMedia>(set => ({
-	currentCardId: 1,
+	currentCardId: 4,
 	setCurrentCardId: id => set({ currentCardId: id })
 }))

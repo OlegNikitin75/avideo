@@ -16,4 +16,7 @@ body {
 	color: var(--foreground);
 	background: var(--background);
 	font-family: var(--font-comfortaa);
+	height: 100vh;
+	overflow: hidden;
+
 }
