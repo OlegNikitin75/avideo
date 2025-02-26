@@ -6,9 +6,9 @@ import { UiButton } from './ui-button'
 
 export const UiHeader = () => {
 	return (
-		<header className='py-6'>
+		<header className='py-4 2xl:py-6'>
 			<nav className='flex justify-between'>
-				<ul className='flex flex-wrap items-center gap-5 md:gap-16'>
+				<ul className='flex flex-wrap items-center gap-5 md:gap-10 2xl:gap-16'>
 					<Link className='hover:text-primary transition-colors' href={menuData[0].url}>
 						<LayoutGrid />
 					</Link>

@@ -6,7 +6,8 @@ interface WindowDimensions {
 	height: number | undefined
 	isMobile: boolean
 	isTablet: boolean
-	isDesktop: boolean
+	// isDesktop: boolean
+	isDesktop2xl: boolean
 }
 
 export function useWindowDimensions(): WindowDimensions {
@@ -15,12 +16,12 @@ export function useWindowDimensions(): WindowDimensions {
 		const height = window.innerHeight
 		const isMobile = width ? width <= 480 : false
 		const isTablet = width ? width > 480 && width <= 768 : false
-		const isDesktop = width ? width > 768 : false
+		const isDesktop2xl = width ? width > 1536 : false
 		return {
 			width,
 			height,
 			isMobile,
-			isDesktop,
+			isDesktop2xl,
 			isTablet
 		}
 	}

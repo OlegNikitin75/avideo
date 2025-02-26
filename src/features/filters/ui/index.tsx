@@ -6,7 +6,7 @@ import { UiButton } from '@/shared/ui'
 export const Filters = () => {
 	const { currentFilter, setCurrentFilter } = useFilterStore()
 	return (
-		<span className='border-foreground/10 mx-auto mt-12 inline-block space-x-3 border-[1px] p-2 rounded-lg'>
+		<span className='border-foreground/10 mx-auto mt-6 2xl:mt-12 inline-block space-x-3 border-[1px] p-2 rounded-lg'>
 			{filtersData.map(filter => (
 				<UiButton
 					onClick={() => setCurrentFilter(filter)}

@@ -6,37 +6,40 @@ import clsx from 'clsx'
 import * as m from 'motion/react-m'
 import { IMediaItem } from '../model/media.item.data'
 import { useMediaStore } from '@/app/store/storeMedia'
+import { useWindowDimensions } from '@/shared/hooks/useWindowDimensions('
 
 interface IMediaItemProps {
 	item: IMediaItem
 	index: number
 	arrayLength: number
+	updateMediaItemIndex: () => void
 }
 
-export const MediaItem: FC<IMediaItemProps> = ({ item, index, arrayLength }) => {
+export const MediaItem: FC<IMediaItemProps> = ({ item, index, arrayLength, updateMediaItemIndex }) => {
+	const { isMobile, isTablet, isDesktop2xl } = useWindowDimensions()
 	const { currentCardId, setCurrentCardId } = useMediaStore()
 
 	const isActiveItem = currentCardId === item.id
 	const angleStep = 360 / arrayLength
 	const angle = -90 + angleStep * index
-	const radius = 400
+	const radius = isDesktop2xl ? 400 : 320
 
 	return (
 		<div
 			style={{
 				position: 'absolute',
 				left: '50%',
-				top: '85%',
+				top: '50%',
 				transform: `translate(-50%, -50%) rotate(${angle}deg) translate(0,-${radius}px)`,
 				zIndex: isActiveItem ? 1 : 0
 			}}
 		>
 			<m.button
 				className={clsx(
-					'border-primary h-96 w-64 overflow-hidden rounded-xl border-3 transition-colors will-change-transform',
+					'border-primary h-72 w-48 overflow-hidden rounded-xl border-3 transition-colors will-change-transform 2xl:h-96 2xl:w-64',
 					!isActiveItem && 'contrast-75 grayscale-100'
 				)}
-				onClick={() => setCurrentCardId(item.id)}
+				onClick={updateMediaItemIndex}
 				animate={{
 					scale: isActiveItem ? 1.1 : 1
 				}}
