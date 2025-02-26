@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Comfortaa } from 'next/font/google'
 import './globals.css'
-import { AnimationProvider } from './providers'
-import { MainWrapper } from './main-wrapper/ui'
+import { AnimationProvider } from '@/app/providers'
+import { MainWrapper } from '@/app/main-wrapper'
 
 const comfortaa = Comfortaa({
 	variable: '--font-comfortaa',

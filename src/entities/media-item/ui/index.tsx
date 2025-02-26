@@ -37,8 +37,9 @@ export const MediaItem: FC<IMediaItemProps> = ({ item, index, arrayLength, updat
 		>
 			<m.button
 				className={clsx(
-					'border-primary relative h-72 w-48 overflow-hidden rounded-xl border-3 transition-colors will-change-transform 2xl:h-96 2xl:w-64',
-					!isActiveItem && 'contrast-75 grayscale-100 hover:grayscale-25'
+					item.rating >= 8 ? 'border-accent' : 'border-secondary',
+					'relative h-64 w-44 overflow-hidden rounded-xl border-3 transition-colors will-change-transform 2xl:h-96 2xl:w-64',
+					!isActiveItem && 'border-transparent contrast-75 grayscale-100 hover:grayscale-25'
 				)}
 				onClick={updateMediaItemIndex}
 				animate={{

@@ -2,6 +2,7 @@
 @theme {
 	--color-primary: #8e1616;
 	--color-secondary: #d84040;
+	--color-accent:#daa520;
 	--color-foreground:#eeeeee;
 	--default-transition-duration: 0.3s;
 	--default-transition-timing-function: easy-in-out;
