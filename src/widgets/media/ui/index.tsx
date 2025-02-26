@@ -9,17 +9,20 @@ const getCardIndex = (mediaItemIndex: number) => mediaData.findIndex(media => me
 
 export const Media = () => {
 	const { currentCardId, setCurrentCardId } = useMediaStore()
-
-	const currentMediaItemIndex = mediaData.findIndex(media => media.id === currentCardId)
-
-	// const realIndex = currentMediaItemIndex + 1
-	// const rotateAngel = realIndex > 4 ? 360 - (realIndex - 4) * 20 : realIndex * 20
+	const [rotateAngle, setRotateAngle] = useState(0)
 
 	const updateMediaItemIndex = (id: number) => {
+		if (currentCardId === id) return
+
 		const previousMediaItemIndex = getCardIndex(currentCardId)
-		console.log(previousMediaItemIndex)
+
 		const newMediaItemIndex = getCardIndex(id)
-		console.log(newMediaItemIndex)
+		const diff = newMediaItemIndex - previousMediaItemIndex
+
+		let newRotateAngle = -(diff * 30)
+		newRotateAngle = newRotateAngle === 330 ? -30 : newRotateAngle
+		newRotateAngle = newRotateAngle === -330 ? 30 : newRotateAngle
+		setRotateAngle(prev => prev + newRotateAngle)
 		setCurrentCardId(id)
 	}
 
@@ -27,8 +30,8 @@ export const Media = () => {
 		<m.div
 			className='relative mx-auto mt-24 h-[800px] w-[800px] 2xl:mt-60'
 			initial={{ rotate: 0 }}
-			transition={{ type: 'keyframes' }}
-			animate={{ rotate: 360 }}
+			transition={{ type: 'keyframes',duration: 0.5 }}
+			animate={{ rotate: rotateAngle ? `${rotateAngle}deg` : 0 }}
 		>
 			{mediaData.map((media, index) => (
 				<MediaItem

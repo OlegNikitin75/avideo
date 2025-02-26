@@ -19,6 +19,7 @@ export const MediaItem: FC<IMediaItemProps> = ({ item, index, arrayLength, updat
 	const { isMobile, isTablet, isDesktop2xl } = useWindowDimensions()
 	const { currentCardId, setCurrentCardId } = useMediaStore()
 
+
 	const isActiveItem = currentCardId === item.id
 	const angleStep = 360 / arrayLength
 	const angle = -90 + angleStep * index
