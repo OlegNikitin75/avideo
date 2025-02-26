@@ -7,6 +7,7 @@ import * as m from 'motion/react-m'
 import { IMediaItem } from '../model/media.item.data'
 import { useMediaStore } from '@/app/store/storeMedia'
 import { useWindowDimensions } from '@/shared/hooks/useWindowDimensions('
+import { UiMediaItemDetails } from '@/shared/ui'
 
 interface IMediaItemProps {
 	item: IMediaItem
@@ -18,7 +19,6 @@ interface IMediaItemProps {
 export const MediaItem: FC<IMediaItemProps> = ({ item, index, arrayLength, updateMediaItemIndex }) => {
 	const { isMobile, isTablet, isDesktop2xl } = useWindowDimensions()
 	const { currentCardId, setCurrentCardId } = useMediaStore()
-
 
 	const isActiveItem = currentCardId === item.id
 	const angleStep = 360 / arrayLength
@@ -37,18 +37,20 @@ export const MediaItem: FC<IMediaItemProps> = ({ item, index, arrayLength, updat
 		>
 			<m.button
 				className={clsx(
-					'border-primary h-72 w-48 overflow-hidden rounded-xl border-3 transition-colors will-change-transform 2xl:h-96 2xl:w-64',
-					!isActiveItem && 'contrast-75 grayscale-100'
+					'border-primary relative h-72 w-48 overflow-hidden rounded-xl border-3 transition-colors will-change-transform 2xl:h-96 2xl:w-64',
+					!isActiveItem && 'contrast-75 grayscale-100 hover:grayscale-25'
 				)}
 				onClick={updateMediaItemIndex}
 				animate={{
-					scale: isActiveItem ? 1.1 : 1
+					scale: isActiveItem ? 1.3 : 1
 				}}
 				initial={{
 					zIndex: 0
 				}}
 				transition={{ type: 'keyframes', stiffness: 230, damping: 32 }}
 			>
+				{isActiveItem && <UiMediaItemDetails item={item} />}
+
 				<Image
 					src={item.poster}
 					width={256}

@@ -28,7 +28,7 @@ export const Media = () => {
 
 	return (
 		<m.div
-			className='relative mx-auto mt-24 h-[800px] w-[800px] 2xl:mt-60'
+			className='relative mx-auto mt-24 h-[900px] w-[900px] 2xl:mt-64'
 			initial={{ rotate: 0 }}
 			transition={{ type: 'keyframes',duration: 0.5 }}
 			animate={{ rotate: rotateAngle ? `${rotateAngle}deg` : 0 }}
